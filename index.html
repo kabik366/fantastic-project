@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Основы веб-программирования для начинающих</title>
+    <style>
+        /* Общие стили */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Шапка сайта */
+        header {
+            background: linear-gradient(135deg, #6e8efb, #a777e3);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        header p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        /* Навигация */
+        nav {
+            background-color: #333;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            justify-content: center;
+        }
+        
+        nav ul li {
+            padding: 1rem;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: #a777e3;
+        }
+        
+        /* Основное содержимое */
+        main {
+            padding: 2rem 0;
+        }
+        
+        section {
+            background-color: white;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        section h2 {
+            color: #6e8efb;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+        
+        section h3 {
+            color: #a777e3;
+            margin: 1.5rem 0 1rem;
+        }
+        
+        .code-example {
+            background-color: #282c34;
+            color: #abb2bf;
+            padding: 1rem;
+            border-radius: 6px;
+            margin: 1rem 0;
+            overflow-x: auto;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        
+        .note {
+            background-color: #fffde7;
+            border-left: 4px solid #ffd600;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        
+        /* Карточки технологий */
+        .tech-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .tech-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .tech-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .tech-card h3 {
+            color: #6e8efb;
+            margin-bottom: 0.5rem;
+        }
+        
+        .tech-card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #a777e3;
+        }
+        
+        /* Подвал */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 2rem;
+        }
+        
+        footer p {
+            margin-bottom: 1rem;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: #a777e3;
+        }
+        
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Основы веб-программирования для начинающих</h1>
+            <p>Изучите базовые технологии для создания современных веб-сайтов с нуля</p>
+        </div>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#html">HTML</a></li>
+            <li><a href="#css">CSS</a></li>
+            <li><a href="#js">JavaScript</a></li>
+            <li><a href="#tools">Инструменты</a></li>
+            <li><a href="#resources">Ресурсы</a></li>
+        </ul>
+    </nav>
+    
+    <main class="container">
+        <section id="html">
+            <h2>HTML - структура веб-страницы</h2>
+            <p>HTML (HyperText Markup Language) - это стандартный язык разметки для создания веб-страниц. Он определяет структуру и содержание веб-страницы.</p>
+            
+            <div class="code-example">
+                <pre>&lt;!DOCTYPE html&gt;
+&lt;html lang="ru"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Моя первая страница&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Привет, мир!&lt;/h1&gt;
+    &lt;p&gt;Это моя первая веб-страница.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+            </div>
+            
+            <h3>Основные HTML-теги</h3>
+            <ul>
+                <li><strong>&lt;h1&gt;-&lt;h6&gt;</strong> - заголовки разного уровня</li>
+                <li><strong>&lt;p&gt;</strong> - параграф текста</li>
+                <li><strong>&lt;a&gt;</strong> - ссылка</li>
+                <li><strong>&lt;img&gt;</strong> - изображение</li>
+                <li><strong>&lt;ul&gt;, &lt;ol&gt;, &lt;li&gt;</strong> - списки</li>
+                <li><strong>&lt;div&gt;</strong> - блочный контейнер</li>
+                <li><strong>&lt;span&gt;</strong> - строчный контейнер</li>
+            </ul>
+            
+            <div class="note">
+                <p><strong>Совет:</strong> Всегда используйте семантические теги (например, &lt;header&gt;, &lt;nav&gt;, &lt;main&gt;, &lt;footer&gt;) для лучшей структуры и доступности вашего кода.</p>
+            </div>
+        </section>
+        
+        <section id="css">
+            <h2>CSS - стилизация веб-страницы</h2>
+            <p>CSS (Cascading Style Sheets) - это язык стилей, который используется для описания внешнего вида документа, написанного на HTML.</p>
+            
+            <div class="code-example">
+                <pre>/* Пример CSS */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+}
+
+.button {
+    display: inline-block;
+    background: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}</pre>
+            </div>
+            
+            <h3>Основные концепции CSS</h3>
+            <ul>
+                <li><strong>Селекторы</strong> - способы выбора элементов для стилизации</li>
+                <li><strong>Свойства и значения</strong> - определяют, как должен выглядеть элемент</li>
+                <li><strong>Блочная модель</strong> - margin, border, padding, content</li>
+                <li><strong>Flexbox и Grid</strong> - современные методы макета</li>
+                <li><strong>Адаптивный дизайн</strong> - медиазапросы для разных устройств</li>
+            </ul>
+        </section>
+        
+        <section id="js">
+            <h2>JavaScript - интерактивность на странице</h2>
+            <p>JavaScript - это язык программирования, который позволяет вам создавать динамически обновляемый контент, управлять мультимедиа, анимировать изображения и многое другое.</p>
+            
+            <div class="code-example">
+                <pre>// Пример JavaScript
+document.addEventListener('DOMContentLoaded', function() {
+    // Код выполнится после загрузки DOM
+    const button = document.getElementById('myButton');
+    const output = document.getElementById('output');
+    
+    button.addEventListener('click', function() {
+        output.textContent = 'Кнопка была нажата!';
+    });
+});</pre>
+            </div>
+            
+            <h3>Основы JavaScript</h3>
+            <ul>
+                <li><strong>Переменные</strong> - let, const, var</li>
+                <li><strong>Типы данных</strong> - числа, строки, объекты, массивы и т.д.</li>
+                <li><strong>Условные операторы</strong> - if/else, switch</li>
+                <li><strong>Циклы</strong> - for, while, do...while</li>
+                <li><strong>Функции</strong> - объявление и вызов</li>
+                <li><strong>DOM-манипуляции</strong> - работа с элементами страницы</li>
+                <li><strong>События</strong> - обработка действий пользователя</li>
+            </ul>
+        </section>
+        
+        <section id="tools">
+            <h2>Инструменты веб-разработчика</h2>
+            <p>Современные инструменты, которые помогут вам в разработке веб-приложений.</p>
+            
+            <div class="tech-cards">
+                <div class="tech-card">
+                    <div class="tech-card-icon">📝</div>
+                    <h3>Редакторы кода</h3>
+                    <p>VS Code, Sublime Text, Atom - мощные редакторы с поддержкой синтаксиса, автодополнением и расширениями.</p>
+                </div>
+                
+                <div class="tech-card">
+                    <div class="tech-card-icon">🔄</div>
+                    <h3>Системы контроля версий</h3>
+                    <p>Git и GitHub позволяют отслеживать изменения в коде и сотрудничать с другими разработчиками.</p>
+                </div>
+                
+                <div class="tech-card">
+                    <div class="tech-card-icon">🛠️</div>
+                    <h3>Инструменты разработчика</h3>
+                    <p>Chrome DevTools - встроенные в браузер инструменты для отладки и анализа веб-страниц.</p>
+                </div>
+                
+                <div class="tech-card">
+                    <div class="tech-card-icon">📦</div>
+                    <h3>Пакетные менеджеры</h3>
+                    <p>npm и yarn - инструменты для управления зависимостями и пакетами в ваших проектах.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="resources">
+            <h2>Полезные ресурсы для обучения</h2>
+            <ul>
+                <li><a href="https://developer.mozilla.org/ru/" target="_blank">MDN Web Docs</a> - лучшая документация по веб-технологиям</li>
+                <li><a href="https://htmlacademy.ru/" target="_blank">HTML Academy</a> - интерактивные курсы по HTML, CSS и JavaScript</li>
+                <li><a href="https://learn.javascript.ru/" target="_blank">Современный учебник JavaScript</a> - подробный учебник по JavaScript</li>
+                <li><a href="https://css-tricks.com/" target="_blank">CSS-Tricks</a> - полезные статьи и руководства по CSS</li>
+                <li><a href="https://codepen.io/" target="_blank">CodePen</a> - площадка для экспериментов с кодом</li>
+            </ul>
+            
+            <div class="note" style="margin-top: 2rem;">
+                <p><strong>Совет начинающим:</strong> Начинайте с малого, практикуйтесь ежедневно, не бойтесь ошибаться. Веб-разработка - это постоянное обучение!</p>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>© Основы веб-программирования для начинающих. М.С. Мавлютов, 2025</p>
+            <p>Создано с ❤️ для будущих разработчиков</p>
+            <div class="social-links">
+                <a href="#" aria-label="Twitter">🐦</a>
+                <a href="#" aria-label="GitHub">🐙</a>
+                <a href="#" aria-label="YouTube">📺</a>
+                <a href="#" aria-label="Telegram">✈️</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
